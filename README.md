@@ -20,7 +20,6 @@ Este projeto, desenvolvido para o módulo **M2**, utiliza uma base de dados de C
 ## 🛠️ Ferramentas e Tecnologias
 
 - **Node.js / Express** (ou outra tecnologia escolhida para backend)
-- **PostgreSQL** (ou outro sistema de base de dados)
 - **Docker**: Para a criação de ambientes isolados.
 - **Swagger**: Documentação interativa das APIs.
 - **Postman**: Testes e integração das APIs.
