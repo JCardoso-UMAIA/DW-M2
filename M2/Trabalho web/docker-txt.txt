@@ -1,0 +1,27 @@
+converter projeto :
+na raiz do projeto criar um Dockerfile com o seguinte conteudo:
+
+FROM node:slim
+WORKDIR /app
+COPY . /app
+RUN npm install 
+EXPOSE 8080
+CMD node index.js
+
+dar a pasta onde esta o projeto:
+ docker build -t nodejs:slim ".\nodejs-swagger-movies - Cópia"
+
+
+criar network
+
+docker network create cinema_network
+
+arrancar nodejs na network criada e expor a porta 8080
+docker run -d --name node --network cinema_network -p 8080:8080 node
+
+arrancar a base de dados na network criada e expor a porta 3306
+(opcional para validar se está a funcionar, introduzir dados)
+docker run -d --name cinema --network cinema_network -p 3306:3306 cinema
+
+
+no container do nodejs alterar o ficheiro db.js para o nome da bd

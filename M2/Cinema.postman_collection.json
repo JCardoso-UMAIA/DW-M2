@@ -1,0 +1,613 @@
+{
+	"info": {
+		"_postman_id": "461a92b6-e775-4e8c-ac93-e1dc602db69b",
+		"name": "Cinema",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38467374",
+		"_collection_link": "https://dw5555.postman.co/workspace/DW-Workspace~4dfb7dc7-1226-425e-b7f7-c85745321e50/collection/38467374-461a92b6-e775-4e8c-ac93-e1dc602db69b?action=share&source=collection_link&creator=38467374"
+	},
+	"item": [
+		{
+			"name": "Pessoas",
+			"item": [
+				{
+					"name": "GetPessoas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostPessoas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"local_morte\": \"Lisboa\",\r\n  \"nome_artistico\": \"Diogo\",\r\n  \"data_nascimento\": \"1946-12-18\",\r\n  \"nome\": \"XUXO\",\r\n  \"id\": 42,\r\n  \"local_nascimento\": \"APDL\",\r\n  \"data_morte\": \"1946-12-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletedPessoas",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"local_morte\": \"Lisboa\",\r\n  \"nome_artistico\": \"Diogo\",\r\n  \"data_nascimento\": \"1946-12-18\",\r\n  \"nome\": \"XUXO\",\r\n  \"id\": 44,\r\n  \"local_nascimento\": \"APDL\",\r\n  \"data_morte\": \"1946-12-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pessoa/44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pessoa",
+								"44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutPessoas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"local_morte\": \"Lisboa\",\r\n  \"nome_artistico\": \"jonas\",\r\n  \"data_nascimento\": \"1946-12-18\",\r\n  \"nome\": \"XUXO\",\r\n  \"id\": 44,\r\n  \"local_nascimento\": \"APDL\",\r\n  \"data_morte\": \"1123-12-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pessoa/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pessoa",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Filmes",
+			"item": [
+				{
+					"name": "GetFilme",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Filme",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Filme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostFilme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"realizador_id\": \"realizador_id\",\r\n    \"ano\": \"ano\",\r\n    \"genero\": \"genero\",\r\n    \"filme_id\": 1,\r\n    \"nome\": \"nome\",\r\n    \"pais\": \"pais\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Filme",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Filme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutFilme",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"realizador_id\": 32,\r\n  \"ano\": \"1923-11-31\",\r\n  \"genero\": \"terror\",\r\n  \"filme_id\": 32,\r\n  \"nome\": \"xoxo\",\r\n  \"pais\": \"PT\"\r\n}\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Filme/32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Filme",
+								"32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelFilme",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Filme/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Filme",
+								"31"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funçao",
+			"item": [
+				{
+					"name": "GetFuncao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Funcao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Funcao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostFuncao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"funcao_id\": 30,\r\n  \"nome\": \"Jardineiro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Funcao/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Funcao",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutFuncao",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"funcao_id\": 1,\r\n  \"nome\": \"nome\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Funcao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Funcao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteFuncao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"funcao_id\": 30,\r\n  \"nome\": \"nome\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Funcao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Funcao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FilmePais",
+			"item": [
+				{
+					"name": "GetFilmePais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Filme/2/pais",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Filme",
+								"2",
+								"pais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filme_id\": 1,\r\n  \"pais\": \"PT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "PostFilmePais",
+							"host": [
+								"PostFilmePais"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Papel",
+			"item": [
+				{
+					"name": "GetPapel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Papel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Papel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostPapel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pessoa_id\": 33,\r\n  \"filme_id\": 10,\r\n  \"funcao_id\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Papel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Papel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bilheteira",
+			"item": [
+				{
+					"name": "GetBilheteira",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bilheteira/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bilheteira",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostBilheteira",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pais_exibicao\": \"pais_exibicao\",\r\n  \"receita_bilheteira\": 50000,\r\n  \"filme_id\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bilheteira/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bilheteira",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Merchandising",
+			"item": [
+				{
+					"name": "GetMerchandising",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Merchandising",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Merchandising"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostMerchandising",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filme_id\": 5,\r\n  \"merchandising\": 1000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Merchandising",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Merchandising"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CustoProduçao",
+			"item": [
+				{
+					"name": "GetCustoProduçao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/CustoProducao/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CustoProducao",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostCustoProduçao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filme_id\": 32,\r\n  \"custo_producao\": 1000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/CustoProducao/32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CustoProducao",
+								"32"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

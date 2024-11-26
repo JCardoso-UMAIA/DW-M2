@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  mysql:
+    image: diogoavteixeira1987/mysql:latest
+    container_name: Cinema_DockerHub
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678 ## senha de acesso do root
+      MYSQL_DATABASE: Cinema #Nome da base de dados 
+      MYSQL_USER: user # Nome do utilizador sem ser root
+      MYSQL_PASSWORD: pw # palavra pass
+    volumes:
+      - mysql-data:/var/lib/mysql   # Persistência dos dados
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p12345678"] #Verifica se o mysql esta a funcionar , define o host como local host
+      interval: 10s # a cada 10 seg verifica o status do my sql
+      timeout: 5s #define o tempo maximo para responder antes de considerar erro 
+      retries: 5 # Numero de tentivar para testar
+      start_period: 15s # define o periodo para validar que nao houve falhas
+
+  nodejs:
+    image: diogoavteixeira1987/nodejs:latest
+    container_name: nodejs_DockerHub
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_NAME: Cinema
+      DATABASE_USER: root
+      DATABASE_PASSWORD: 12345678
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    command: 
+      "npm start"
+      
+volumes:
+  mysql-data:
+    driver: local

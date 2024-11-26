@@ -1,0 +1,13 @@
+Comando para correr o Docker composse
+
+docker-compose up - correr Docker local
+
+docker-compose -f docker-compose.hub.yaml up - correr Docker apartir do Docker hub
+
+docker build -t nodejs - montar Docker node
+
+docker images - Ver imagens do docker
+
+docker image push diogoavteixeira1987/nodejs
+
+docker image push diogoavteixeira1987/mysql

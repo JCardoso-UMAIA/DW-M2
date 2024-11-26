@@ -1,0 +1,596 @@
+openapi: 3.0.3
+info:
+  title: Cinema Docker
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+  description: Servidor local
+tags:
+- name: Pessoa
+- name: Filme
+- name: Funcao
+- name: Filme_Pais
+- name: Papel
+- name: Bilheteira
+- name: Merchandising
+- name: Custo_Producao
+paths:
+  /Pessoa:
+    get:
+      tags:
+      - Pessoa
+      summary: Obter lista de pessoas
+      operationId: getPessoa
+      responses:
+        "200":
+          description: Lista de pessoas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pessoa'
+                x-content-type: application/json
+        "404":
+          description: Nenhuma pessoa encontrada
+      x-swagger-router-controller: Pessoa
+    post:
+      tags:
+      - Pessoa
+      summary: Criar uma nova pessoa
+      operationId: createPessoa
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pessoa'
+        required: true
+      responses:
+        "201":
+          description: Pessoa criada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pessoa'
+      x-swagger-router-controller: Pessoa
+  /Pessoa/{id}:
+    put:
+      tags:
+      - Pessoa
+      summary: Atualizar uma pessoa
+      operationId: updatePessoa
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pessoa'
+        required: true
+      responses:
+        "200":
+          description: Pessoa atualizada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pessoa'
+        "404":
+          description: Pessoa não encontrada
+      x-swagger-router-controller: Pessoa
+    delete:
+      tags:
+      - Pessoa
+      summary: Apagar uma pessoa
+      operationId: deletePessoa
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      responses:
+        "204":
+          description: Pessoa Apagada com sucesso
+        "404":
+          description: Pessoa não encontrada
+      x-swagger-router-controller: Pessoa
+  /Filme:
+    get:
+      tags:
+      - Filme
+      summary: Obter lista de filmes
+      operationId: getFilms
+      responses:
+        "200":
+          description: Lista de filmes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Filme'
+                x-content-type: application/json
+      x-swagger-router-controller: Filme
+    post:
+      tags:
+      - Filme
+      summary: Criar um novo filme
+      operationId: createFilme
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Filme'
+        required: true
+      responses:
+        "201":
+          description: Filme criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Filme'
+      x-swagger-router-controller: Filme
+  /Filme/{id}:
+    put:
+      tags:
+      - Filme
+      summary: Atualizar um filme
+      operationId: updateFilme
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Filme'
+        required: true
+      responses:
+        "200":
+          description: Filme atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Filme'
+      x-swagger-router-controller: Filme
+    delete:
+      tags:
+      - Filme
+      summary: Apagar um filme
+      operationId: deleteFilme
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      responses:
+        "204":
+          description: Filme Apagado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Filme'
+        "404":
+          description: Filme não encontrado
+      x-swagger-router-controller: Filme
+  /Filme/{id}/pais:
+    get:
+      tags:
+      - Filme_Pais
+      summary: Obter os países associados a um filme
+      operationId: getFilmePais
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: Lista de países associados ao filme
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Filmepais'
+                x-content-type: application/json
+      x-swagger-router-controller: FilmePais
+    post:
+      tags:
+      - Filmepais
+      summary: Associar um país a um filme
+      operationId: addFilmePais
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Filmepais'
+        required: true
+      responses:
+        "201":
+          description: País associado com sucesso ao filme
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Filmepais'
+      x-swagger-router-controller: Filmepais
+  /Papel:
+    get:
+      tags:
+      - Papel
+      summary: Obter todos os papéis
+      operationId: getPapel
+      responses:
+        "200":
+          description: Lista de papéis
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Papel'
+                x-content-type: application/json
+      x-swagger-router-controller: Papel
+    post:
+      tags:
+      - Papel
+      summary: Criar um papel
+      operationId: createPapel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Papel'
+        required: true
+      responses:
+        "201":
+          description: Papel criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Papel'
+      x-swagger-router-controller: Papel
+  /Bilheteira/{id}:
+    get:
+      tags:
+      - Bilheteira
+      summary: Obter dados de bilheteira de um filme
+      operationId: getBilheteira
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: Dados de bilheteira do filme
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bilheteira'
+      x-swagger-router-controller: Bilheteira
+    post:
+      tags:
+      - Bilheteira
+      summary: Criar dados de bilheteira para um filme
+      operationId: createBilheteira
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Bilheteira'
+        required: true
+      responses:
+        "201":
+          description: Dados de bilheteira criados com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bilheteira'
+      x-swagger-router-controller: Bilheteira
+  /Merchandising/{id}:
+    get:
+      tags:
+      - Merchandising
+      summary: Obter dados de merchandising de um filme
+      operationId: getMerchandising
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: Dados de merchandising do filme
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Merchandising'
+      x-swagger-router-controller: Merchandising
+    post:
+      tags:
+      - Merchandising
+      summary: Criar dados de merchandising para um filme
+      operationId: createMerchandising
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Merchandising'
+        required: true
+      responses:
+        "201":
+          description: Dados de merchandising criados com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Merchandising'
+      x-swagger-router-controller: Merchandising
+  /CustoProducao/{id}:
+    get:
+      tags:
+      - Custo_Producao
+      summary: Obter dados de custo de produção de um filme
+      operationId: getCustoProducao
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: Dados de custo de produção do filme
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustoProducao'
+      x-swagger-router-controller: CustoProducao
+    post:
+      tags:
+      - Custo_Producao
+      summary: Criar dados de custo de produção para um filme
+      operationId: createCustoProducao
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustoProducao'
+        required: true
+      responses:
+        "201":
+          description: Dados de custo de produção criados com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustoProducao'
+      x-swagger-router-controller: CustoProducao
+components:
+  schemas:
+    Pessoa:
+      required:
+      - data_nascimento
+      - local_nascimento
+      - nome
+      - nome_artistico
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID da pessoa
+        nome:
+          type: string
+          description: Nome completo da pessoa
+        nome_artistico:
+          type: string
+          description: Nome artístico da pessoa
+        data_nascimento:
+          type: string
+          description: Data de nascimento da pessoa
+        local_nascimento:
+          type: string
+          description: Local de nascimento da pessoa
+        data_morte:
+          type: string
+          description: Data de morte da pessoa (opcional)
+        local_morte:
+          type: string
+          description: Local de morte da pessoa (opcional)
+      example:
+        local_morte: local_morte
+        nome_artistico: nome_artistico
+        data_nascimento: data_nascimento
+        nome: nome
+        id: id
+        local_nascimento: local_nascimento
+        data_morte: data_morte
+    Filme:
+      required:
+      - ano
+      - genero
+      - nome
+      - pais
+      - realizador_id
+      type: object
+      properties:
+        filme_id:
+          type: string
+          description: ID do filme
+        nome:
+          type: string
+          description: Nome do filme
+        realizador_id:
+          type: string
+          description: ID do realizador (diretor do filme)
+        genero:
+          type: string
+          description: Gênero do filme
+        ano:
+          type: string
+          description: Ano de lançamento do filme
+        pais:
+          type: string
+          description: País de origem do filme
+      example:
+        realizador_id: realizador_id
+        ano: ano
+        genero: genero
+        filme_id: filme_id
+        nome: nome
+        pais: pais
+    Filmepais:
+      required:
+      - filme_id
+      - pais
+      type: object
+      properties:
+        filme_id:
+          type: string
+          description: ID do filme
+        pais:
+          type: string
+          description: País associado ao filme
+      example:
+        filme_id: filme_id
+        pais: pais
+    Papel:
+      required:
+      - filme_id
+      - funcao_id
+      - pessoa_id
+      type: object
+      properties:
+        funcao_id:
+          type: string
+          description: "ID da função (diretor, ator, etc.)"
+        pessoa_id:
+          type: string
+          description: ID da pessoa que exerce a função
+        filme_id:
+          type: string
+          description: ID do filme onde a função é exercida
+      example:
+        pessoa_id: pessoa_id
+        filme_id: filme_id
+        funcao_id: funcao_id
+    Bilheteira:
+      required:
+      - filme_id
+      - pais_exibicao
+      - receita_bilheteira
+      type: object
+      properties:
+        filme_id:
+          type: string
+          description: ID do filme
+        pais_exibicao:
+          type: string
+          description: País onde o filme é exibido
+        receita_bilheteira:
+          type: string
+          description: Receita de bilheteira do filme
+      example:
+        pais_exibicao: pais_exibicao
+        receita_bilheteira: receita_bilheteira
+        filme_id: filme_id
+    Merchandising:
+      required:
+      - filme_id
+      - merchandising
+      type: object
+      properties:
+        filme_id:
+          type: string
+          description: ID do filme
+        merchandising:
+          type: string
+          description: Valor de merchandising associado ao filme
+      example:
+        filme_id: filme_id
+        merchandising: merchandising
+    CustoProducao:
+      required:
+      - custo_producao
+      - filme_id
+      type: object
+      properties:
+        filme_id:
+          type: string
+          description: ID do filme
+        custo_producao:
+          type: string
+          description: Custo de produção do filme
+      example:
+        custo_producao: custo_producao
+        filme_id: filme_id
