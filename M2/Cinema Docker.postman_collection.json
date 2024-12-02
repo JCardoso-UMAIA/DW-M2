@@ -1,0 +1,2371 @@
+{
+	"info": {
+		"_postman_id": "2e790b49-23c7-478e-ac7e-46a249474d4a",
+		"name": "Cinema Docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38467374",
+		"_collection_link": "https://dw5555.postman.co/workspace/DW-Workspace~4dfb7dc7-1226-425e-b7f7-c85745321e50/collection/38467374-2e790b49-23c7-478e-ac7e-46a249474d4a?action=share&source=collection_link&creator=38467374"
+	},
+	"item": [
+		{
+			"name": "Pessoa",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter lista de Pessoas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Pessoa/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Pessoa",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Lista de Pessoas",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Pessoa/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Pessoa",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"data_nascimento\": \"<string>\",\n    \"local_nascimento\": \"<string>\",\n    \"nome\": \"<string>\",\n    \"nome_artistico\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"data_morte\": \"<string>\",\n    \"local_morte\": \"<string>\"\n  },\n  {\n    \"data_nascimento\": \"<string>\",\n    \"local_nascimento\": \"<string>\",\n    \"nome\": \"<string>\",\n    \"nome_artistico\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"data_morte\": \"<string>\",\n    \"local_morte\": \"<string>\"\n  }\n]"
+								},
+								{
+									"name": "Nenhuma pessoa encontrada",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Pessoa/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Pessoa",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Atualizar uma pessoa",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"local_morte\": \"Lisboa\",\n  \"nome_artistico\": \"teste\",\n  \"data_nascimento\": \"1234-12-18\",\n  \"nome\": \"XUXa\",\n  \"id\": 44,\n  \"local_nascimento\": \"dsf\",\n  \"data_morte\": \"1123-12-18\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Pessoa/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Pessoa",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Pessoa atualizada com sucesso",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"data_nascimento\": \"<string>\",\n  \"local_nascimento\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"nome_artistico\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"data_morte\": \"<string>\",\n  \"local_morte\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Pessoa/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Pessoa",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"data_nascimento\": \"<string>\",\n  \"local_nascimento\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"nome_artistico\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"data_morte\": \"<string>\",\n  \"local_morte\": \"<string>\"\n}"
+								},
+								{
+									"name": "Pessoa não encontrada",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"data_nascimento\": \"<string>\",\n  \"local_nascimento\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"nome_artistico\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"data_morte\": \"<string>\",\n  \"local_morte\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Pessoa/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Pessoa",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Apagar uma pessoa",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Pessoa/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Pessoa",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Pessoa Apagada com sucesso",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Pessoa/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Pessoa",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Pessoa não encontrada",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Pessoa/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Pessoa",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Obter lista de Pessoas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Pessoa",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Pessoa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lista de Pessoas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Pessoa",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Pessoa"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"data_nascimento\": \"<string>\",\n    \"local_nascimento\": \"<string>\",\n    \"nome\": \"<string>\",\n    \"nome_artistico\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"data_morte\": \"<string>\",\n    \"local_morte\": \"<string>\"\n  },\n  {\n    \"data_nascimento\": \"<string>\",\n    \"local_nascimento\": \"<string>\",\n    \"nome\": \"<string>\",\n    \"nome_artistico\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"data_morte\": \"<string>\",\n    \"local_morte\": \"<string>\"\n  }\n]"
+						},
+						{
+							"name": "Nenhuma pessoa encontrada",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Pessoa",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Pessoa"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Criar uma nova pessoa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data_nascimento\": \"<string>\",\n  \"local_nascimento\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"nome_artistico\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"data_morte\": \"<string>\",\n  \"local_morte\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Pessoa",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Pessoa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Pessoa criada com sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"data_nascimento\": \"<string>\",\n  \"local_nascimento\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"nome_artistico\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"data_morte\": \"<string>\",\n  \"local_morte\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Pessoa",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Pessoa"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data_nascimento\": \"<string>\",\n  \"local_nascimento\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"nome_artistico\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"data_morte\": \"<string>\",\n  \"local_morte\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Filme",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "pais",
+							"item": [
+								{
+									"name": "Obter os países associados a um filme",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Filme/:id/pais",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Filme",
+												":id",
+												"pais"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Lista de países associados ao filme",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/Filme/:id/pais",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"Filme",
+														":id",
+														"pais"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"filme_id\": \"<long>\",\n    \"pais\": \"<string>\"\n  },\n  {\n    \"filme_id\": \"<long>\",\n    \"pais\": \"<string>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Associar um país a um filme",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"filme_id\": \"<long>\",\n  \"pais\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Filme/:id/pais",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Filme",
+												":id",
+												"pais"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "País associado com sucesso ao filme",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"filme_id\": \"<long>\",\n  \"pais\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/Filme/:id/pais",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"Filme",
+														":id",
+														"pais"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"filme_id\": \"<long>\",\n  \"pais\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Obter lista de filmes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Filme/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Filme",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Lista de filmes",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Filme/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Filme",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"ano\": \"<string>\",\n    \"genero\": \"<string>\",\n    \"nome\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"realizador_id\": \"<integer>\",\n    \"filme_id\": \"<integer>\"\n  },\n  {\n    \"ano\": \"<string>\",\n    \"genero\": \"<string>\",\n    \"nome\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"realizador_id\": \"<integer>\",\n    \"filme_id\": \"<integer>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Atualizar um filme",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ano\": \"<string>\",\n  \"genero\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"realizador_id\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Filme/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Filme",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Filme atualizado com sucesso",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ano\": \"<string>\",\n  \"genero\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"realizador_id\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Filme/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Filme",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"ano\": \"<string>\",\n  \"genero\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"realizador_id\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Apagar um filme",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Filme/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Filme",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Filme Apagado com sucesso",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Filme/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Filme",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"ano\": \"<string>\",\n  \"genero\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"realizador_id\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}"
+								},
+								{
+									"name": "Filme não encontrado",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Filme/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Filme",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Obter lista de filmes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Filme",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Filme"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lista de filmes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Filme",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Filme"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"ano\": \"<string>\",\n    \"genero\": \"<string>\",\n    \"nome\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"realizador_id\": \"<integer>\",\n    \"filme_id\": \"<integer>\"\n  },\n  {\n    \"ano\": \"<string>\",\n    \"genero\": \"<string>\",\n    \"nome\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"realizador_id\": \"<integer>\",\n    \"filme_id\": \"<integer>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Criar um novo filme",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ano\": \"<string>\",\n  \"genero\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"realizador_id\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Filme",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Filme"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Filme criado com sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ano\": \"<string>\",\n  \"genero\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"realizador_id\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Filme",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Filme"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"ano\": \"<string>\",\n  \"genero\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"realizador_id\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}"
+						},
+						{
+							"name": "x-swagger-router-controller response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ano\": \"<string>\",\n  \"genero\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"realizador_id\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Filme",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Filme"
+									]
+								}
+							},
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Funcao",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Lista todas as Funcoes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Funcao/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Funcao",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) ID da função"
+										}
+									]
+								},
+								"description": "Retorna uma lista com todas as funções."
+							},
+							"response": [
+								{
+									"name": "Lista de funções",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Funcao/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Funcao",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"funcao_id\": \"<integer>\",\n    \"nome\": \"<string>\"\n  },\n  {\n    \"funcao_id\": \"<integer>\",\n    \"nome\": \"<string>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Atualiza uma função",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"funcao_id\": \"<integer>\",\n  \"nome\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Funcao/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Funcao",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) ID da função"
+										}
+									]
+								},
+								"description": "Atualiza os dados de uma função existente."
+							},
+							"response": [
+								{
+									"name": "Função atualizada com sucesso",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"funcao_id\": \"<integer>\",\n  \"nome\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Funcao/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Funcao",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Requisição inválida",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"funcao_id\": \"<integer>\",\n  \"nome\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Funcao/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Funcao",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Apagar uma função",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Funcao/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Funcao",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) ID da função"
+										}
+									]
+								},
+								"description": "Remove uma função."
+							},
+							"response": [
+								{
+									"name": "Função apagada com sucesso",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Funcao/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Funcao",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Função não encontrada",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Funcao/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Funcao",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "x-swagger-router-controller response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Funcao/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Funcao",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Lista todas as Funcoes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Funcao",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Funcao"
+							]
+						},
+						"description": "Retorna uma lista com todas as funções."
+					},
+					"response": [
+						{
+							"name": "Lista de funções",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Funcao",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Funcao"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"funcao_id\": \"<integer>\",\n    \"nome\": \"<string>\"\n  },\n  {\n    \"funcao_id\": \"<integer>\",\n    \"nome\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Cria uma nova função",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"funcao_id\": \"<integer>\",\n  \"nome\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Funcao",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Funcao"
+							]
+						},
+						"description": "Cria uma nova função."
+					},
+					"response": [
+						{
+							"name": "Função criada com sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"funcao_id\": \"<integer>\",\n  \"nome\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Funcao",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Funcao"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Requisição inválida",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"funcao_id\": \"<integer>\",\n  \"nome\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Funcao",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Funcao"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Papel",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter todos os papéis",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Papel/:id?pessoa_id=<string>&filme_id=<string>&funcao_id=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Papel",
+										":id"
+									],
+									"query": [
+										{
+											"key": "pessoa_id",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "filme_id",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "funcao_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Lista de papéis",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Papel/:id?pessoa_id=<string>&filme_id=<string>&funcao_id=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Papel",
+												":id"
+											],
+											"query": [
+												{
+													"key": "pessoa_id",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "filme_id",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "funcao_id",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"filme_id\": \"<integer>\",\n    \"funcao_id\": \"<integer>\",\n    \"pessoa_id\": \"<integer>\"\n  },\n  {\n    \"filme_id\": \"<integer>\",\n    \"funcao_id\": \"<integer>\",\n    \"pessoa_id\": \"<integer>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Criar um papel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filme_id\": \"<integer>\",\n  \"funcao_id\": \"<integer>\",\n  \"pessoa_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Papel/:id?pessoa_id=<string>&filme_id=<string>&funcao_id=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Papel",
+										":id"
+									],
+									"query": [
+										{
+											"key": "pessoa_id",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "filme_id",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "funcao_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) ID da função"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Papel criado com sucesso",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"filme_id\": \"<integer>\",\n  \"funcao_id\": \"<integer>\",\n  \"pessoa_id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Papel/:id?pessoa_id=<string>&filme_id=<string>&funcao_id=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Papel",
+												":id"
+											],
+											"query": [
+												{
+													"key": "pessoa_id",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "filme_id",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "funcao_id",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"filme_id\": \"<integer>\",\n  \"funcao_id\": \"<integer>\",\n  \"pessoa_id\": \"<integer>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bilheteira",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter dados de bilheteira de um filme",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Bilheteira/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Bilheteira",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Dados de bilheteira do filme",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Bilheteira/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Bilheteira",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"filme_id\": \"<long>\",\n  \"pais_exibicao\": \"<string>\",\n  \"receita_bilheteira\": \"<integer>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Atualizar dados de bilheteira para um filme",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filme_id\": 2,\n  \"pais_exibicao\": \"Canada\",\n  \"receita_bilheteira\": 500000\n",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Bilheteira/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Bilheteira",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Dados de bilheteira atualizados com sucesso",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"filme_id\": \"<long>\",\n  \"pais_exibicao\": \"<string>\",\n  \"receita_bilheteira\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Bilheteira/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Bilheteira",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"filme_id\": \"<long>\",\n  \"pais_exibicao\": \"<string>\",\n  \"receita_bilheteira\": \"<integer>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Merchandising",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter dados de merchandising de um filme",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Merchandising/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Merchandising",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Dados de merchandising do filme",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Merchandising/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Merchandising",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"filme_id\": \"<integer>\",\n  \"merchandising\": \"<integer>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Atualizar dados de merchandising para um filme",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filme_id\": \"<integer>\",\n  \"merchandising\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Merchandising/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Merchandising",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Dados de merchandising criados com sucesso",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"filme_id\": \"<integer>\",\n  \"merchandising\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Merchandising/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Merchandising",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"filme_id\": \"<integer>\",\n  \"merchandising\": \"<integer>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CustoProducao",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter dados de custo de produção de um filme",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/CustoProducao/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"CustoProducao",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Dados de custo de produção do filme",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/CustoProducao/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"CustoProducao",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"custo_producao\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Atualiza dados de custo de produção para um filme",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"custo_producao\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/CustoProducao/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"CustoProducao",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Dados de custo de produção criados com sucesso",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"custo_producao\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/CustoProducao/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"CustoProducao",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"custo_producao\": \"<integer>\",\n  \"filme_id\": \"<integer>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
