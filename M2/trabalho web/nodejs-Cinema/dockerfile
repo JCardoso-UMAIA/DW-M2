@@ -1,0 +1,15 @@
+#usa a imagem mais leve do nodejs
+FROM node:slim 
+
+#define o diretorio dentro do conteiner como /app
+WORKDIR /app
+
+#copia todos os diretorios atual do host para o diretorio de trabalho
+COPY . /app
+
+#executa o comando npm install para instal todas as dependecias
+RUN npm install 
+
+#mostra a porta 8080 do conteiner e permite o seu acesso
+EXPOSE 8080
+

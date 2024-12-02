@@ -1,0 +1,43 @@
+# Criaçao do Container local
+version: '3.8'
+
+services:
+  database:
+    container_name: database
+    build: mysql 
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678 # Criaçao do Container local
+      MYSQL_DATABASE: Cinema
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pw
+    volumes:
+      - mysql-data:/var/lib/mysql    # Volume onde os dados serao armazenados de forma presistente mysql-data , /var/lib/mysql - onde o mysql guarda as tabalas e os registros
+      - ./Cinema.sql:/docker-entrypoint-initdb.d  # ficheiro de inicialização da base de dados Cinema.sql , :/docker-entrypoint-initdb.d diretorio especial dentro do conteiner, onde o mysql verifica e arranca todos os arquivos
+    ports:
+      - "3306:3306" # Porta que é usada
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p12345678"] #Verifica se o mysql esta a funcionar , define o host como local host
+      interval: 10s # a cada 10 seg verifica o status do my sql
+      timeout: 5s #define o tempo maximo para responder antes de considerar erro 
+      retries: 5 # Numero de tentivar para testar
+      start_period: 15s # define o periodo para validar que nao houve falhas
+
+  nodejs:
+    build: nodejs-Cinema 
+    environment:
+      DATABASE_HOST: database 
+      DATABASE_PORT: 3306
+      DATABASE_NAME: Cinema
+      DATABASE_USER: root
+      DATABASE_PASSWORD: 12345678
+    depends_on:
+      - database # Indica que o serviço mysql tem que iniciar primeiro que o Nodejs.
+    ports:
+      - "8080:8080" #Porta que é usada 
+
+    command: 
+      "npm start" #Inicia o NodeJS , quando o mysql acabar de arrancar
+
+volumes:
+  mysql-data: #Define um volume que se gerido pelo Docker
+    driver: local #Drive local de padrao do Docker

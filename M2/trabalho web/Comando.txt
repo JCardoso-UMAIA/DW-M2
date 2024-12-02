@@ -1,0 +1,27 @@
+Comando para correr o Docker composse
+
+docker-compose up - correr Docker local
+
+docker-compose -f docker-compose.hub.yaml up - correr Docker apartir do Docker hub
+
+docker build -t nodejs-cinema - montar Docker node
+
+docker build -t mysql - montar Docker mysql
+
+docker images - Ver imagens do docker
+
+docker image push diogoavteixeira1987/nodejs
+
+docker image push diogoavteixeira1987/mysql
+
+Enviar para dockerhub o node
+
+docker tag nodejs-cinema diogoavteixeira1987/nodejs:v1 - cria imagem
+
+docker push diogoavteixeira1987/nodejs:v1 - envia para docker hub
+
+mysql
+
+docker tag database diogoavteixeira1987/mysql:latest
+
+docker push diogoavteixeira1987/mysql:latest

@@ -1,0 +1,41 @@
+#Ligaçao a base de dados e NodeJS por DOCKERHUB
+version: '3.8'
+services:
+  database:
+    image: diogoavteixeira1987/mysql:latest # Versao mais recente da imagem que esta no HUB , basta so trocar o TAG :Latest por outra e ele descarrega caso encontre
+    container_name: Cinema_DockerHub # Nome do Conteiner que ele vai dar quando criar em docker
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678 ## senha de acesso do root
+      MYSQL_DATABASE: database #Nome da base de dados 
+      MYSQL_USER: user # Nome do utilizador sem ser root
+      MYSQL_PASSWORD: pw # palavra pass
+    volumes:
+      - mysql-data:/var/lib/mysql   # Volume onde os dados serao armazenados de forma presistente mysql-data , /var/lib/mysql - onde o mysql guarda as tabalas e os registros
+    ports:
+      - "3306:3306" # Porta que a base de dados vai utilizar
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p12345678"] #Verifica se o mysql esta a funcionar , define o host como local host
+      interval: 10s # a cada 10 seg verifica o status do my sql
+      timeout: 5s #define o tempo maximo para responder antes de considerar erro 
+      retries: 5 # Numero de tentivar para testar
+      start_period: 15s # define o periodo para validar que nao houve falhas
+
+  nodejs:
+    image: diogoavteixeira1987/nodejs:v1 # imagem do NodeJs que vai fazer buscar a DOCKERHUB
+    container_name: nodejs_DockerHub # Nome do conteiner que vai criar e, Docker
+    environment:
+      DATABASE_HOST: Cinema_DockerHub 
+      DATABASE_PORT: 3306
+      DATABASE_NAME: Cinema
+      DATABASE_USER: root
+      DATABASE_PASSWORD: 12345678
+    depends_on:
+      - database # Indica que o serviço mysql tem que iniciar primeiro que o Nodejs.
+    ports:
+      - "8080:8080" # Porta que o Nodejs vai usar 
+    command: 
+      "npm start" #Inicia o NodeJS , quando o mysql acabar de arrancar
+      
+volumes:
+  mysql-data: #Define um volume que se gerido pelo Docker
+    driver: local #Drive local de padrao do Docker
