@@ -20,7 +20,7 @@ Este projeto, desenvolvido para o módulo **M3**, utiliza uma base de dados de C
 
 ## 🛠️ Ferramentas e Tecnologias
 
-- **LoopBack4 **: tecnologia escolhida para backend.
+- **LoopBack4**: tecnologia escolhida para backend.
 - **Docker**: Para a criação de ambientes isolados.
 - **React**: Documentação interativa das APIs.
 - **Postman**: Testes e integração das APIs.
