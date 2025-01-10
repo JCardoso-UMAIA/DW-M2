@@ -16,7 +16,7 @@ Este projeto, desenvolvido para o módulo **M3**, utiliza uma base de dados de C
   - **LoopBack4**: Para documentação e testes das APIs.
   - **Postman**: Para validação e testes das APIs.
   - **Docker**: Para containerizar e garantir a portabilidade do projeto.
-  - - **React**:Para documentação e testes das APIs.
+  - **React**:Para documentação e testes das APIs.
 
 ## 🛠️ Ferramentas e Tecnologias
 
