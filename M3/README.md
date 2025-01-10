@@ -25,6 +25,11 @@ Este projeto, desenvolvido para o módulo **M3**, utiliza uma base de dados de C
 - **React**: Documentação interativa das APIs.
 - **Postman**: Testes e integração das APIs.
 
+##  Apresentaçao
+
+- Estruturação e interação com uma base de dados composta por 8 tabelasem mysql interligadas por **chaves primárias** e **chaves estrangeiras**.
+- Foram utilizadas varias ferramentas ( mysql,Docker, LoopBack4, React, Postman).
+  
 ## 👥 Equipa
 
 - **Diogo Teixeira** - [A044483@umaia.pt](mailto:A044483@umaia.pt)
