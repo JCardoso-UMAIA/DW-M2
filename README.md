@@ -33,6 +33,9 @@ Este projeto, desenvolvido para o módulo DW1, utiliza uma base de dados de Cine
 - **M2** - Exploramos tecnologias como o node.js, docker e swagger.
 - **M3** - Integração completa da API desenvolvida em M2 no LoopBack e React Admin.
 
+## 🖼️ Galeria
+
+
 ## 👥 Equipa
 
 - **Diogo Teixeira** - [A044483@umaia.pt](mailto:A044483@umaia.pt)
