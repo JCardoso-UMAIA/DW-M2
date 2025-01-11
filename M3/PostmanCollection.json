@@ -1,0 +1,3256 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "cinema-docker",
+        "version": "0.0.1",
+        "description": "Cinema",
+        "contact": {
+            "name": "Grupo inf24dw1g31"
+        }
+    },
+    "paths": {
+        "/Custo_Producao/count": {
+            "get": {
+                "x-controller-name": "CustoProducaoController",
+                "x-operation-name": "count",
+                "tags": [
+                    "CustoProducaoController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Custo_Producao model count",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/loopback.Count"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Custo_Producao.WhereFilter",
+                                    "additionalProperties": true,
+                                    "x-typescript-type": "@loopback/repository#Where<Custo_Producao>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "CustoProducaoController.count"
+            }
+        },
+        "/Custo_Producao/{filme_id}": {
+            "put": {
+                "x-controller-name": "CustoProducaoController",
+                "x-operation-name": "replaceById",
+                "tags": [
+                    "CustoProducaoController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "CustoProducao PUT success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filme_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Custo_Producao"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "CustoProducaoController.replaceById"
+            },
+            "get": {
+                "x-controller-name": "CustoProducaoController",
+                "x-operation-name": "findByFilmeId",
+                "tags": [
+                    "CustoProducaoController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "CustoProducao model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Custo_ProducaoWithRelations"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filme_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "operationId": "CustoProducaoController.findByFilmeId"
+            }
+        },
+        "/Custo_Producao": {
+            "get": {
+                "x-controller-name": "CustoProducaoController",
+                "x-operation-name": "find",
+                "tags": [
+                    "CustoProducaoController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of CustoProducao model instances",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Custo_ProducaoWithRelations"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Custo_Producao.Filter"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "CustoProducaoController.find"
+            }
+        },
+        "/Filme_Pais/count": {
+            "get": {
+                "x-controller-name": "FilmePaisControllerController",
+                "x-operation-name": "count",
+                "tags": [
+                    "FilmePaisControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Filme_Pais model count",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/loopback.Count"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "FilmePais.WhereFilter",
+                                    "additionalProperties": true,
+                                    "x-typescript-type": "@loopback/repository#Where<FilmePais>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FilmePaisControllerController.count"
+            }
+        },
+        "/Filme_Pais/{filme_id}/{pais}": {
+            "get": {
+                "x-controller-name": "FilmePaisControllerController",
+                "x-operation-name": "findById",
+                "tags": [
+                    "FilmePaisControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Filme_Pais model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FilmePaisWithRelations"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filme_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "pais",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FilmePais.Filter"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FilmePaisControllerController.findById"
+            }
+        },
+        "/Filme_Pais": {
+            "get": {
+                "x-controller-name": "FilmePaisControllerController",
+                "x-operation-name": "find",
+                "tags": [
+                    "FilmePaisControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of FilmePais model instances",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FilmePaisWithRelations"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FilmePais.Filter1"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FilmePaisControllerController.find"
+            }
+        },
+        "/bilheteiras/count": {
+            "get": {
+                "x-controller-name": "BilheteiraControllerController",
+                "x-operation-name": "count",
+                "tags": [
+                    "BilheteiraControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bilheteira model count",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/loopback.Count"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Bilheteira.WhereFilter",
+                                    "additionalProperties": true,
+                                    "x-typescript-type": "@loopback/repository#Where<Bilheteira>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "BilheteiraControllerController.count"
+            }
+        },
+        "/bilheteiras/{filme_id}": {
+            "get": {
+                "x-controller-name": "BilheteiraControllerController",
+                "x-operation-name": "findByFilmeId",
+                "tags": [
+                    "BilheteiraControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bilheteira model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Bilheteira"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filme_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "operationId": "BilheteiraControllerController.findByFilmeId"
+            }
+        },
+        "/bilheteiras": {
+            "get": {
+                "x-controller-name": "BilheteiraControllerController",
+                "x-operation-name": "find",
+                "tags": [
+                    "BilheteiraControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of Bilheteira model instances",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BilheteiraWithRelations"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Bilheteira.Filter"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "BilheteiraControllerController.find"
+            }
+        },
+        "/filme-pais/{id}": {
+            "put": {
+                "x-controller-name": "FilmePaisControllerController",
+                "x-operation-name": "replaceById",
+                "tags": [
+                    "FilmePaisControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "FilmePais PUT success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FilmePais"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "FilmePaisControllerController.replaceById"
+            }
+        },
+        "/filmes/count": {
+            "get": {
+                "x-controller-name": "FilmeControllerController",
+                "x-operation-name": "count",
+                "tags": [
+                    "FilmeControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Filme model count",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/loopback.Count"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Filme.WhereFilter",
+                                    "additionalProperties": true,
+                                    "x-typescript-type": "@loopback/repository#Where<Filme>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FilmeControllerController.count"
+            }
+        },
+        "/filmes/{id}": {
+            "get": {
+                "x-controller-name": "FilmeControllerController",
+                "x-operation-name": "findById",
+                "tags": [
+                    "FilmeControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Filme model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FilmeWithRelations"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Filme.Filter"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FilmeControllerController.findById"
+            },
+            "delete": {
+                "x-controller-name": "FilmeControllerController",
+                "x-operation-name": "deleteById",
+                "tags": [
+                    "FilmeControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Filme DELETE success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "operationId": "FilmeControllerController.deleteById"
+            }
+        },
+        "/filmes": {
+            "get": {
+                "x-controller-name": "FilmeControllerController",
+                "x-operation-name": "find",
+                "tags": [
+                    "FilmeControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of Filme model instances",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FilmeWithRelations"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Filme.Filter1"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FilmeControllerController.find"
+            }
+        },
+        "/funcaos/count": {
+            "get": {
+                "x-controller-name": "FuncaoControllerController",
+                "x-operation-name": "count",
+                "tags": [
+                    "FuncaoControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Funcao model count",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/loopback.Count"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Funcao.WhereFilter",
+                                    "additionalProperties": true,
+                                    "x-typescript-type": "@loopback/repository#Where<Funcao>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FuncaoControllerController.count"
+            }
+        },
+        "/funcaos/{id}": {
+            "put": {
+                "x-controller-name": "FuncaoControllerController",
+                "x-operation-name": "replaceById",
+                "tags": [
+                    "FuncaoControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Funcao PUT success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Funcao"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "FuncaoControllerController.replaceById"
+            },
+            "patch": {
+                "x-controller-name": "FuncaoControllerController",
+                "x-operation-name": "updateById",
+                "tags": [
+                    "FuncaoControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Funcao PATCH success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "FuncaoControllerController.updateById"
+            },
+            "get": {
+                "x-controller-name": "FuncaoControllerController",
+                "x-operation-name": "findById",
+                "tags": [
+                    "FuncaoControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Funcao model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FuncaoWithRelations"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Funcao.Filter"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FuncaoControllerController.findById"
+            },
+            "delete": {
+                "x-controller-name": "FuncaoControllerController",
+                "x-operation-name": "deleteById",
+                "tags": [
+                    "FuncaoControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Funcao DELETE success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "operationId": "FuncaoControllerController.deleteById"
+            }
+        },
+        "/funcaos": {
+            "post": {
+                "x-controller-name": "FuncaoControllerController",
+                "x-operation-name": "create",
+                "tags": [
+                    "FuncaoControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Funcao model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Funcao"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewFuncao"
+                            }
+                        }
+                    }
+                },
+                "operationId": "FuncaoControllerController.create"
+            },
+            "get": {
+                "x-controller-name": "FuncaoControllerController",
+                "x-operation-name": "find",
+                "tags": [
+                    "FuncaoControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of Funcao model instances",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FuncaoWithRelations"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Funcao.Filter1"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "FuncaoControllerController.find"
+            }
+        },
+        "/merchandisings/count": {
+            "get": {
+                "x-controller-name": "MerchandisingControllerController",
+                "x-operation-name": "count",
+                "tags": [
+                    "MerchandisingControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Merchandising model count",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/loopback.Count"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Merchandising.WhereFilter",
+                                    "additionalProperties": true,
+                                    "x-typescript-type": "@loopback/repository#Where<Merchandising>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "MerchandisingControllerController.count"
+            }
+        },
+        "/merchandisings/{filme_id}": {
+            "put": {
+                "x-controller-name": "MerchandisingControllerController",
+                "x-operation-name": "replaceById",
+                "tags": [
+                    "MerchandisingControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Merchandising PUT success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filme_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Merchandising"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "MerchandisingControllerController.replaceById"
+            },
+            "patch": {
+                "x-controller-name": "MerchandisingControllerController",
+                "x-operation-name": "updateById",
+                "tags": [
+                    "MerchandisingControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Merchandising PATCH success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filme_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "MerchandisingControllerController.updateById"
+            },
+            "get": {
+                "x-controller-name": "MerchandisingControllerController",
+                "x-operation-name": "findById",
+                "tags": [
+                    "MerchandisingControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Merchandising model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MerchandisingWithRelations"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filme_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Merchandising.Filter"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "MerchandisingControllerController.findById"
+            }
+        },
+        "/merchandisings": {
+            "get": {
+                "x-controller-name": "MerchandisingControllerController",
+                "x-operation-name": "find",
+                "tags": [
+                    "MerchandisingControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of Merchandising model instances",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/MerchandisingWithRelations"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Merchandising.Filter1"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "MerchandisingControllerController.find"
+            }
+        },
+        "/papels/count": {
+            "get": {
+                "x-controller-name": "PapelControllerController",
+                "x-operation-name": "count",
+                "tags": [
+                    "PapelControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Papel model count",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/loopback.Count"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Papel.WhereFilter",
+                                    "additionalProperties": true,
+                                    "x-typescript-type": "@loopback/repository#Where<Papel>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "PapelControllerController.count"
+            }
+        },
+        "/papels/{id}": {
+            "put": {
+                "x-controller-name": "PapelControllerController",
+                "x-operation-name": "replaceById",
+                "tags": [
+                    "PapelControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Papel PUT success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Papel"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "PapelControllerController.replaceById"
+            },
+            "patch": {
+                "x-controller-name": "PapelControllerController",
+                "x-operation-name": "updateById",
+                "tags": [
+                    "PapelControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Papel PATCH success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "PapelControllerController.updateById"
+            },
+            "get": {
+                "x-controller-name": "PapelControllerController",
+                "x-operation-name": "findById",
+                "tags": [
+                    "PapelControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Papel model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PapelWithRelations"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Papel.Filter"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "PapelControllerController.findById"
+            }
+        },
+        "/papels": {
+            "get": {
+                "x-controller-name": "PapelControllerController",
+                "x-operation-name": "find",
+                "tags": [
+                    "PapelControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of Papel model instances",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PapelWithRelations"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Papel.Filter1"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "PapelControllerController.find"
+            }
+        },
+        "/pessoas/count": {
+            "get": {
+                "x-controller-name": "PessoaControllerController",
+                "x-operation-name": "count",
+                "tags": [
+                    "PessoaControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Pessoa model count",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/loopback.Count"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Pessoa.WhereFilter",
+                                    "additionalProperties": true,
+                                    "x-typescript-type": "@loopback/repository#Where<Pessoa>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "PessoaControllerController.count"
+            }
+        },
+        "/pessoas/{id}": {
+            "put": {
+                "x-controller-name": "PessoaControllerController",
+                "x-operation-name": "replaceById",
+                "tags": [
+                    "PessoaControllerController"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Pessoa PUT success"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pessoa"
+                            }
+                        }
+                    },
+                    "x-parameter-index": 1
+                },
+                "operationId": "PessoaControllerController.replaceById"
+            },
+            "get": {
+                "x-controller-name": "PessoaControllerController",
+                "x-operation-name": "findById",
+                "tags": [
+                    "PessoaControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Pessoa model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PessoaWithRelations"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Pessoa.Filter"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "PessoaControllerController.findById"
+            }
+        },
+        "/pessoas": {
+            "post": {
+                "x-controller-name": "PessoaControllerController",
+                "x-operation-name": "create",
+                "tags": [
+                    "PessoaControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Pessoa model instance",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Pessoa"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewPessoa"
+                            }
+                        }
+                    }
+                },
+                "operationId": "PessoaControllerController.create"
+            },
+            "get": {
+                "x-controller-name": "PessoaControllerController",
+                "x-operation-name": "find",
+                "tags": [
+                    "PessoaControllerController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of Pessoa model instances",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PessoaWithRelations"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Pessoa.Filter1"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "operationId": "PessoaControllerController.find"
+            }
+        },
+        "/ping": {
+            "get": {
+                "x-controller-name": "PingController",
+                "x-operation-name": "ping",
+                "tags": [
+                    "PingController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ping Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "PingController.ping"
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:3000"
+        }
+    ],
+    "components": {
+        "schemas": {
+            "Pessoa": {
+                "title": "Pessoa",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "nome": {
+                        "type": "string"
+                    },
+                    "nome_artistico": {
+                        "type": "string"
+                    },
+                    "data_nascimento": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "local_nascimento": {
+                        "type": "string"
+                    },
+                    "data_morte": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "local_morte": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "nome",
+                    "nome_artistico",
+                    "data_nascimento",
+                    "local_nascimento"
+                ],
+                "additionalProperties": false
+            },
+            "NewPessoa": {
+                "title": "NewPessoa",
+                "type": "object",
+                "description": "(tsType: Omit<Pessoa, 'id'>, schemaOptions: { title: 'NewPessoa', exclude: [ 'id' ] })",
+                "properties": {
+                    "nome": {
+                        "type": "string"
+                    },
+                    "nome_artistico": {
+                        "type": "string"
+                    },
+                    "data_nascimento": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "local_nascimento": {
+                        "type": "string"
+                    },
+                    "data_morte": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "local_morte": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "nome",
+                    "nome_artistico",
+                    "data_nascimento",
+                    "local_nascimento"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "Omit<Pessoa, 'id'>"
+            },
+            "PapelWithRelations": {
+                "title": "PapelWithRelations",
+                "type": "object",
+                "description": "(tsType: PapelWithRelations, schemaOptions: { includeRelations: true })",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "funcao_id": {
+                        "type": "number"
+                    },
+                    "pessoa_id": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "funcao_id",
+                    "pessoa_id",
+                    "filme_id"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "PapelWithRelations"
+            },
+            "BilheteiraWithRelations": {
+                "title": "BilheteiraWithRelations",
+                "type": "object",
+                "description": "(tsType: BilheteiraWithRelations, schemaOptions: { includeRelations: true })",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "pais_exibicao": {
+                        "type": "string"
+                    },
+                    "receita_bilheteira": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    },
+                    "foreignKey": {}
+                },
+                "required": [
+                    "pais_exibicao",
+                    "receita_bilheteira"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "BilheteiraWithRelations"
+            },
+            "FilmeWithRelations": {
+                "title": "FilmeWithRelations",
+                "type": "object",
+                "description": "(tsType: FilmeWithRelations, schemaOptions: { includeRelations: true })",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "nome": {
+                        "type": "string"
+                    },
+                    "realizador_id": {
+                        "type": "number"
+                    },
+                    "genero": {
+                        "type": "string"
+                    },
+                    "ano": {
+                        "type": "string"
+                    },
+                    "pais": {
+                        "type": "string"
+                    },
+                    "foreignKey": {},
+                    "papeis": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PapelWithRelations"
+                        }
+                    },
+                    "bilheteiras": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BilheteiraWithRelations"
+                        }
+                    }
+                },
+                "required": [
+                    "nome",
+                    "genero",
+                    "ano",
+                    "pais"
+                ],
+                "additionalProperties": true,
+                "x-typescript-type": "FilmeWithRelations"
+            },
+            "PessoaWithRelations": {
+                "title": "PessoaWithRelations",
+                "type": "object",
+                "description": "(tsType: PessoaWithRelations, schemaOptions: { includeRelations: true })",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "nome": {
+                        "type": "string"
+                    },
+                    "nome_artistico": {
+                        "type": "string"
+                    },
+                    "data_nascimento": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "local_nascimento": {
+                        "type": "string"
+                    },
+                    "data_morte": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "local_morte": {
+                        "type": "string"
+                    },
+                    "filmes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FilmeWithRelations"
+                        }
+                    }
+                },
+                "required": [
+                    "nome",
+                    "nome_artistico",
+                    "data_nascimento",
+                    "local_nascimento"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "PessoaWithRelations"
+            },
+            "Papel": {
+                "title": "Papel",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "funcao_id": {
+                        "type": "number"
+                    },
+                    "pessoa_id": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "funcao_id",
+                    "pessoa_id",
+                    "filme_id"
+                ],
+                "additionalProperties": false
+            },
+            "MerchandisingWithRelations": {
+                "title": "MerchandisingWithRelations",
+                "type": "object",
+                "description": "(tsType: MerchandisingWithRelations, schemaOptions: { includeRelations: true })",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    },
+                    "merchandising": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "filme_id",
+                    "merchandising"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "MerchandisingWithRelations"
+            },
+            "Merchandising": {
+                "title": "Merchandising",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    },
+                    "merchandising": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "filme_id",
+                    "merchandising"
+                ],
+                "additionalProperties": false
+            },
+            "Funcao": {
+                "title": "Funcao",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "nome": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "nome"
+                ],
+                "additionalProperties": false
+            },
+            "NewFuncao": {
+                "title": "NewFuncao",
+                "type": "object",
+                "description": "(tsType: Omit<Funcao, 'id'>, schemaOptions: { title: 'NewFuncao', exclude: [ 'id' ] })",
+                "properties": {
+                    "nome": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "nome"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "Omit<Funcao, 'id'>"
+            },
+            "FuncaoWithRelations": {
+                "title": "FuncaoWithRelations",
+                "type": "object",
+                "description": "(tsType: FuncaoWithRelations, schemaOptions: { includeRelations: true })",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "nome": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "nome"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "FuncaoWithRelations"
+            },
+            "FilmePaisWithRelations": {
+                "title": "FilmePaisWithRelations",
+                "type": "object",
+                "description": "(tsType: FilmePaisWithRelations, schemaOptions: { includeRelations: true })",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    },
+                    "pais": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "filme_id",
+                    "pais"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "FilmePaisWithRelations"
+            },
+            "FilmePais": {
+                "title": "FilmePais",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    },
+                    "pais": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "filme_id",
+                    "pais"
+                ],
+                "additionalProperties": false
+            },
+            "Custo_ProducaoWithRelations": {
+                "title": "Custo_ProducaoWithRelations",
+                "type": "object",
+                "description": "(tsType: Custo_ProducaoWithRelations, schemaOptions: { includeRelations: true })",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    },
+                    "custo_producao": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "filme_id",
+                    "custo_producao"
+                ],
+                "additionalProperties": false,
+                "x-typescript-type": "Custo_ProducaoWithRelations"
+            },
+            "Custo_Producao": {
+                "title": "Custo_Producao",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    },
+                    "custo_producao": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "filme_id",
+                    "custo_producao"
+                ],
+                "additionalProperties": false
+            },
+            "Bilheteira": {
+                "title": "Bilheteira",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "pais_exibicao": {
+                        "type": "string"
+                    },
+                    "receita_bilheteira": {
+                        "type": "number"
+                    },
+                    "filme_id": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "pais_exibicao",
+                    "receita_bilheteira"
+                ],
+                "additionalProperties": false
+            },
+            "loopback.Count": {
+                "type": "object",
+                "title": "loopback.Count",
+                "x-typescript-type": "@loopback/repository#Count",
+                "properties": {
+                    "count": {
+                        "type": "number"
+                    }
+                }
+            },
+            "Custo_Producao.Filter": {
+                "type": "object",
+                "title": "Custo_Producao.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "title": "Custo_Producao.WhereFilter",
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "filme_id": {
+                                        "type": "boolean"
+                                    },
+                                    "custo_producao": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "filme_id",
+                                        "custo_producao"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Custo_Producao.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Custo_Producao>"
+            },
+            "FilmePais.Filter": {
+                "type": "object",
+                "title": "FilmePais.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "filme_id": {
+                                        "type": "boolean"
+                                    },
+                                    "pais": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "filme_id",
+                                        "pais"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "FilmePais.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<FilmePais>"
+            },
+            "FilmePais.Filter1": {
+                "type": "object",
+                "title": "FilmePais.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "title": "FilmePais.WhereFilter",
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "filme_id": {
+                                        "type": "boolean"
+                                    },
+                                    "pais": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "filme_id",
+                                        "pais"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "FilmePais.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<FilmePais>"
+            },
+            "Bilheteira.ScopeFilter": {
+                "type": "object",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": true
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "uniqueItems": true
+                            }
+                        ]
+                    },
+                    "include": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {},
+                            "additionalProperties": true
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "title": "Bilheteira.ScopeFilter"
+            },
+            "Bilheteira.IncludeFilter.Items": {
+                "title": "Bilheteira.IncludeFilter.Items",
+                "type": "object",
+                "properties": {
+                    "relation": {
+                        "type": "string",
+                        "enum": [
+                            "filme_id"
+                        ]
+                    },
+                    "scope": {
+                        "$ref": "#/components/schemas/Bilheteira.ScopeFilter"
+                    }
+                }
+            },
+            "Bilheteira.Filter": {
+                "type": "object",
+                "title": "Bilheteira.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "title": "Bilheteira.WhereFilter",
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "pais_exibicao": {
+                                        "type": "boolean"
+                                    },
+                                    "receita_bilheteira": {
+                                        "type": "boolean"
+                                    },
+                                    "filme_id": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "pais_exibicao",
+                                        "receita_bilheteira",
+                                        "filme_id"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Bilheteira.Fields"
+                    },
+                    "include": {
+                        "title": "Bilheteira.IncludeFilter",
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/Bilheteira.IncludeFilter.Items"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Bilheteira>"
+            },
+            "Filme.ScopeFilter": {
+                "type": "object",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": true
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "uniqueItems": true
+                            }
+                        ]
+                    },
+                    "include": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {},
+                            "additionalProperties": true
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "title": "Filme.ScopeFilter"
+            },
+            "Filme.IncludeFilter.Items": {
+                "title": "Filme.IncludeFilter.Items",
+                "type": "object",
+                "properties": {
+                    "relation": {
+                        "type": "string",
+                        "enum": [
+                            "realizador_id",
+                            "papeis",
+                            "bilheteiras"
+                        ]
+                    },
+                    "scope": {
+                        "$ref": "#/components/schemas/Filme.ScopeFilter"
+                    }
+                }
+            },
+            "Filme.Filter": {
+                "type": "object",
+                "title": "Filme.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "nome": {
+                                        "type": "boolean"
+                                    },
+                                    "realizador_id": {
+                                        "type": "boolean"
+                                    },
+                                    "genero": {
+                                        "type": "boolean"
+                                    },
+                                    "ano": {
+                                        "type": "boolean"
+                                    },
+                                    "pais": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": true
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Filme.Fields"
+                    },
+                    "include": {
+                        "title": "Filme.IncludeFilter",
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/Filme.IncludeFilter.Items"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Filme>"
+            },
+            "Filme.Filter1": {
+                "type": "object",
+                "title": "Filme.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "title": "Filme.WhereFilter",
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "nome": {
+                                        "type": "boolean"
+                                    },
+                                    "realizador_id": {
+                                        "type": "boolean"
+                                    },
+                                    "genero": {
+                                        "type": "boolean"
+                                    },
+                                    "ano": {
+                                        "type": "boolean"
+                                    },
+                                    "pais": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": true
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Filme.Fields"
+                    },
+                    "include": {
+                        "title": "Filme.IncludeFilter",
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/Filme.IncludeFilter.Items"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Filme>"
+            },
+            "Funcao.Filter": {
+                "type": "object",
+                "title": "Funcao.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "nome": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "nome"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Funcao.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Funcao>"
+            },
+            "Funcao.Filter1": {
+                "type": "object",
+                "title": "Funcao.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "title": "Funcao.WhereFilter",
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "nome": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "nome"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Funcao.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Funcao>"
+            },
+            "Merchandising.Filter": {
+                "type": "object",
+                "title": "Merchandising.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "filme_id": {
+                                        "type": "boolean"
+                                    },
+                                    "merchandising": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "filme_id",
+                                        "merchandising"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Merchandising.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Merchandising>"
+            },
+            "Merchandising.Filter1": {
+                "type": "object",
+                "title": "Merchandising.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "title": "Merchandising.WhereFilter",
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "filme_id": {
+                                        "type": "boolean"
+                                    },
+                                    "merchandising": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "filme_id",
+                                        "merchandising"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Merchandising.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Merchandising>"
+            },
+            "Papel.Filter": {
+                "type": "object",
+                "title": "Papel.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "funcao_id": {
+                                        "type": "boolean"
+                                    },
+                                    "pessoa_id": {
+                                        "type": "boolean"
+                                    },
+                                    "filme_id": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "funcao_id",
+                                        "pessoa_id",
+                                        "filme_id"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Papel.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Papel>"
+            },
+            "Papel.Filter1": {
+                "type": "object",
+                "title": "Papel.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "title": "Papel.WhereFilter",
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "funcao_id": {
+                                        "type": "boolean"
+                                    },
+                                    "pessoa_id": {
+                                        "type": "boolean"
+                                    },
+                                    "filme_id": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "funcao_id",
+                                        "pessoa_id",
+                                        "filme_id"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Papel.Fields"
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Papel>"
+            },
+            "Pessoa.ScopeFilter": {
+                "type": "object",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": true
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "uniqueItems": true
+                            }
+                        ]
+                    },
+                    "include": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {},
+                            "additionalProperties": true
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "title": "Pessoa.ScopeFilter"
+            },
+            "Pessoa.IncludeFilter.Items": {
+                "title": "Pessoa.IncludeFilter.Items",
+                "type": "object",
+                "properties": {
+                    "relation": {
+                        "type": "string",
+                        "enum": [
+                            "filmes"
+                        ]
+                    },
+                    "scope": {
+                        "$ref": "#/components/schemas/Pessoa.ScopeFilter"
+                    }
+                }
+            },
+            "Pessoa.Filter": {
+                "type": "object",
+                "title": "Pessoa.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "nome": {
+                                        "type": "boolean"
+                                    },
+                                    "nome_artistico": {
+                                        "type": "boolean"
+                                    },
+                                    "data_nascimento": {
+                                        "type": "boolean"
+                                    },
+                                    "local_nascimento": {
+                                        "type": "boolean"
+                                    },
+                                    "data_morte": {
+                                        "type": "boolean"
+                                    },
+                                    "local_morte": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "nome",
+                                        "nome_artistico",
+                                        "data_nascimento",
+                                        "local_nascimento",
+                                        "data_morte",
+                                        "local_morte"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Pessoa.Fields"
+                    },
+                    "include": {
+                        "title": "Pessoa.IncludeFilter",
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/Pessoa.IncludeFilter.Items"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Pessoa>"
+            },
+            "Pessoa.Filter1": {
+                "type": "object",
+                "title": "Pessoa.Filter",
+                "properties": {
+                    "offset": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 100
+                    },
+                    "skip": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "order": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "where": {
+                        "title": "Pessoa.WhereFilter",
+                        "type": "object",
+                        "additionalProperties": true
+                    },
+                    "fields": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "boolean"
+                                    },
+                                    "nome": {
+                                        "type": "boolean"
+                                    },
+                                    "nome_artistico": {
+                                        "type": "boolean"
+                                    },
+                                    "data_nascimento": {
+                                        "type": "boolean"
+                                    },
+                                    "local_nascimento": {
+                                        "type": "boolean"
+                                    },
+                                    "data_morte": {
+                                        "type": "boolean"
+                                    },
+                                    "local_morte": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "id",
+                                        "nome",
+                                        "nome_artistico",
+                                        "data_nascimento",
+                                        "local_nascimento",
+                                        "data_morte",
+                                        "local_morte"
+                                    ],
+                                    "example": "id"
+                                },
+                                "uniqueItems": true
+                            }
+                        ],
+                        "title": "Pessoa.Fields"
+                    },
+                    "include": {
+                        "title": "Pessoa.IncludeFilter",
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/Pessoa.IncludeFilter.Items"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "x-typescript-type": "@loopback/repository#Filter<Pessoa>"
+            },
+            "PingResponse": {
+                "type": "object",
+                "title": "PingResponse",
+                "properties": {
+                    "greeting": {
+                        "type": "string"
+                    },
+                    "date": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "headers": {
+                        "type": "object",
+                        "properties": {
+                            "Content-Type": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                }
+            }
+        }
+    }
+}
