@@ -34,7 +34,9 @@ Este projeto, desenvolvido para o módulo DW1, utiliza uma base de dados de Cine
 - **M3** - Integração completa da API desenvolvida em M2 no LoopBack e React Admin.
 
 ## 🖼️ Galeria
-
+![Texto Alternativo](https://github.com/inf24dw1g31/DW-M2/blob/main/img/dashboard.jpg)
+#
+![Texto Alternativo](https://github.com/inf24dw1g31/DW-M2/blob/main/img/funcao.jpg)
 
 ## 👥 Equipa
 
